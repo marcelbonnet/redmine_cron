@@ -1,0 +1,6 @@
+pt-BR:
+  redmine_cron:
+    task_started: TAREFA INICIADA
+    runnable: Executável?
+    skipped: Pulada.
+    finished: Terminada.

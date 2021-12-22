@@ -4,3 +4,10 @@ pt-BR:
     runnable: Executável?
     skipped: Pulada.
     finished: Terminada.
+    tasks: Tarefas Agendadas
+    task_new: Nova Tarefa
+    task: Tarefa Rake
+    last_run: Executado Em
+    last_status: Última Situação
+    interval: Intervalo
+    enabled: Ativo

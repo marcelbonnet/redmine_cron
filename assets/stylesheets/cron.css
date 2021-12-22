@@ -1,0 +1,71 @@
+.icon-cron_task {
+    background-image: url("../images/clock.png");
+}
+
+.icon-view_customize-disable {
+    background-image: url("../images/disable.png");
+}
+
+.icon-view_customize-enable {
+    background-image: url("../images/enable.png");
+}
+
+table.redmine_cron.list td.path, table.redmine_cron.list td.comments {
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap : break-word;
+}
+
+table.redmine_cron.list td.id {
+    padding-left: 5px;
+}
+
+table.redmine_cron.list td.insertion_position {
+    white-space: nowrap;
+}
+
+table.redmine_cron.list tr.disable {
+    color: #aaaaaa;
+}
+
+table.redmine_cron.list tr.private {
+    font-style: italic;
+}
+
+table.redmine_cron.box {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.redmine_cron.box th {
+    text-align: right;
+    vertical-align: top;
+    width: 160px;
+    padding: 2px 10px 2px 0px;
+}
+
+table.redmine_cron.box td {
+    vertical-align: top;
+    padding: 2px;
+}
+
+table.redmine_cron.box td pre {
+    margin: 0;
+    padding: 2px 4px;
+    background-color: #fafafa;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+textarea#redmine_cron_code {
+    resize: vertical;
+    width: 95%;
+}
+
+input#redmine_cron_comments {
+    width: 95%;
+}

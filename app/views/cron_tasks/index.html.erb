@@ -1,0 +1,53 @@
+<div class="contextual">
+  <%= link_to l(:"redmine_cron.task_new"), 
+      new_cron_task_path, :class => 'icon icon-add' %>
+</div>
+
+<%= title l('redmine_cron.tasks') %>
+
+<% if (@cron_tasks.blank?) %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+
+<table class="list redmine_cron">
+
+  <thead>
+    <tr>
+      <%= sort_header_tag('id', :caption => '#') %>
+      <%= sort_header_tag('task', :caption => l(:"redmine_cron.task")) %>
+      <%= sort_header_tag('last_run', :caption => l(:"redmine_cron.last_run")) %>
+      <%= sort_header_tag('last_status', :caption => l(:"redmine_cron.last_status")) %>
+      <%= sort_header_tag('interval', :caption => l(:"redmine_cron.interval")) %>
+      <%= sort_header_tag('enabled', :caption => l(:"redmine_cron.enabled")) %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cron_tasks.each do |task| %>
+    <tr class="<%= cycle('odd', 'even') %><%= ' disable' unless task.enabled %>">
+      <td class="id"><%= link_to task.id, cron_task_path(task.id) %></td>
+      <td class="path"><%=h task.task %></td>
+      <td class="insertion_position"><%=h l(task.last_run) %></td>
+      <td><%=h l(task.last_status) %></td>
+      <td class="comments"><%=h task.last_status %></td>
+      <td class="comments"><%=h task.interval %></td>
+      <td class="comments"><%=h task.enabled %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<p class="buttons">
+  <%= link_to l(:label_disable_all),
+      cron_tasks_path(task: {is_enabled: 0}),
+      :data => {:confirm => l(:text_are_you_sure)}, :method => :put,
+      :class => 'icon icon-task-disable' %>
+  <%= link_to l(:label_enable_all),
+      cron_tasks_path(task: {is_enabled: 1}),
+      :data => {:confirm => l(:text_are_you_sure)}, :method => :put,
+      :class => 'icon icon-task-enable' %>
+</p>
+<% end %>
+
+<%=stylesheet_link_tag("cron", plugin: "redmine_cron") %>

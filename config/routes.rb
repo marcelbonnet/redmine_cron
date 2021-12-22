@@ -1,0 +1,1 @@
+resources :cron_tasks

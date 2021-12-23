@@ -1,0 +1,3 @@
+var $col = $("#toggle_enabled_<%=@cron_task.id%>")
+$col.html('<%= toggle_enabled @cron_task %>')
+$col.parent().toggleClass('disable')

@@ -7,6 +7,7 @@ class Setup < ActiveRecord::Migration[4.2]
 			t.boolean :enabled, null: false
 			t.integer :interval, null: false
 			t.belongs_to :user, null: false
+			t.text :comments
 			t.timestamps
 		end
 	end

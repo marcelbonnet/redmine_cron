@@ -11,3 +11,9 @@ pt-BR:
     last_status: Última Situação
     interval: Intervalo
     enabled: Ativo
+    comments: Comentários
+    status_ok: Finalizado
+    status_failed: Falhou
+    never_executed: Nunca Executou
+    disable_all: Desabilitar Todos
+    enable_all: Habilitar Todos

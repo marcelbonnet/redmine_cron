@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "scm" %>
+
+<div class="contextual">
+<%= link_to(l(:button_edit),
+               {:action => 'edit', :id => @cron_task.id},
+               :class => 'icon icon-edit') %>
+<%= link_to(l(:button_delete),
+               {:action => 'destroy', :id => @cron_task.id},
+               :data => {:confirm => l(:text_are_you_sure)}, :method => :delete,
+               :class => 'icon icon-del') %>
+</div>
+
+<%= title [l(:'redmine_cron.tasks'), cron_tasks_path], @cron_task.task %>
+
+<table class="box redmine_cron">
+  <tr>
+    <th><%=h l(:'redmine_cron.task') %></th>
+    <td><%=h @cron_task.task %></td>
+  </tr>
+  <tr>
+    <th><%=h l(:'redmine_cron.last_run') %></th>
+    <td><%=format_last_run @cron_task.last_run %></td>
+  </tr>
+  <tr>
+    <th><%=h l(:'redmine_cron.last_status') %></th>
+    <td class="status<%=@cron_task.last_status%>"><%=show_task_status @cron_task %></td>
+  </tr>
+  <tr>
+    <th><%=h l(:'redmine_cron.interval') %></th>
+    <td><%=distance_of_time_in_words (@cron_task.interval.minutes) %></td>
+  </tr>
+  <tr>
+    <th><%=h l(:'redmine_cron.enabled') %></th>
+    <td><%= @cron_task.enabled ? l(:general_text_Yes) : l(:general_text_No) %></td>
+  </tr>
+  <tr>
+    <th><%=h l(:'redmine_cron.comments') %></th>
+    <td><%=h @cron_task.comments %></td>
+  </tr>
+</table>

@@ -4,3 +4,16 @@ en:
     runnable: Runnable?
     skipped: Skipped.
     finished: Finished.
+    tasks: Scheduled Tasks
+    task_new: New Task
+    task: Rake Task
+    last_run: Last Executed
+    last_status: Last Status
+    interval: Interval
+    enabled: Enabled
+    comments: Comments
+    status_ok: Ok
+    status_failed: Failed
+    never_executed: Never Executed
+    disable_all: Disable All
+    enable_all: Enable All

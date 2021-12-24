@@ -1,10 +1,10 @@
 <div class="contextual">
   <%= link_to l(:'redmine_cron.disable_all'),
-      cron_tasks_path(task: {is_enabled: 0}),
+      cron_tasks_change_status_path(:cron_task => {:enabled => 0}),
       :data => {:confirm => l(:text_are_you_sure)}, :method => :put,
       :class => 'icon icon-cron_task-disable' %>
   <%= link_to l(:'redmine_cron.enable_all'),
-      cron_tasks_path(task: {is_enabled: 1}),
+      cron_tasks_change_status_path(:cron_task => {:enabled => 1}),
       :data => {:confirm => l(:text_are_you_sure)}, :method => :put,
       :class => 'icon icon-cron_task-enable' %>
   <%= link_to l(:"redmine_cron.task_new"), 

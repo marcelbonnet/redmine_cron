@@ -18,6 +18,18 @@ class CronTasksController < ApplicationController
   	respond_to :js
   end
 
+  def bulk_edit
+  	params.require(:cron_task)
+  	if params[:cron_task][:enabled].to_i == 1
+  		CronTask.update_all enabled: true
+  	else
+  		CronTask.update_all enabled: false
+  	end
+
+  	redirect_to cron_tasks_path
+
+  end
+
   def show
   end
 

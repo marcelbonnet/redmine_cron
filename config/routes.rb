@@ -1,3 +1,5 @@
+match '/cron_tasks/change_status/', :to => 'cron_tasks#bulk_edit', :via => [:put]
+
 resources :cron_tasks
 
 resources :cron_tasks do

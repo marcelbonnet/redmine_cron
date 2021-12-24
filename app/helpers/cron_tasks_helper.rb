@@ -18,4 +18,10 @@ module CronTasksHelper
 		end
 	end
 
+	def list_rake_tasks
+		# require 'rake'
+    RedmineApp::Application.load_tasks
+    Rake::Task::tasks.collect{|task| task.name}.delete_if{|t| t == 'redmine:cron_job'}
+	end
+
 end

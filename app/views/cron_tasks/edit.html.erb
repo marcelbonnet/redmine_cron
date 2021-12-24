@@ -1,0 +1,8 @@
+<%= title [@cron_task.task, cron_tasks_path], @cron_task.id %>
+
+<div class="content">
+  <%= labelled_form_for @cron_task, :html => { :id => 'cron_task-form', :multipart => false, :method => :put } do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= submit_tag l(:button_save) %>
+  <% end %>
+</div>

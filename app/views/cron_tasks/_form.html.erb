@@ -1,0 +1,17 @@
+<%= error_messages_for @cron_task %>
+
+<div class="box tabular">
+
+	<p>
+		<%= f.select :task, list_rake_tasks , :required => true   %>
+	</p>
+	<p>
+		<%= f.text_field :interval %> (TODO: ano,dia,m,h,min . mín 1min.)
+	</p>
+	<p>
+		<%= f.text_area :comments%>
+	</p>
+	<p>
+		<%= f.check_box :enabled, :required => true %>
+	</p>
+</div>

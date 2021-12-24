@@ -10,5 +10,7 @@ class Setup < ActiveRecord::Migration[4.2]
 			t.text :comments
 			t.timestamps
 		end
+
+		add_index :cron_tasks, :task, :unique => true
 	end
 end

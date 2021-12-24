@@ -1,0 +1,8 @@
+<%= title [l(:'redmine_cron.task_new'), cron_tasks_path] %>
+
+<div class="content">
+  <%= labelled_form_for @cron_task, :html => { :id => 'cron_task-form', :multipart => false, :method => :post } do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= submit_tag l(:button_save) %>
+  <% end %>
+</div>

@@ -1,10 +1,15 @@
 class CronTask < ActiveRecord::Base
+
+	include Redmine::SafeAttributes
+	
 	belongs_to :user
 
 	validates_presence_of :user
 
 	STATUS_OK = 0
 	STATUS_FAILED=1
+
+	safe_attributes "task", "last_run", "last_status", "enabled", "interval", "user_id", "comments"
 
 	def self.enabled_tasks
 		CronTask.where(enabled:true)

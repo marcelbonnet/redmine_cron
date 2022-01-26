@@ -40,8 +40,8 @@ class CronTasksController < ApplicationController
   def create
   	params.require(:cron_task)
   	@cron_task = CronTask.new user: User.current
-  	@cron_task.safe_attributes = params[:cron_task] if RAILS::Version::MAJOR >= 5
-    @cron_task.safe_attributes = params[:cron_task].permit(:task, :interval, :comments, :enabled) if RAILS::Version::MAJOR == 4
+  	@cron_task.safe_attributes = params[:cron_task] if Rails::VERSION::MAJOR >= 5
+    @cron_task.safe_attributes = params[:cron_task].permit(:task, :interval, :comments, :enabled) if Rails::VERSION::MAJOR == 4
 
   	if @cron_task.save
   		flash[:notice] = l(:notice_successful_create)
@@ -56,8 +56,8 @@ class CronTasksController < ApplicationController
   end
 
   def update
-    @cron_task.safe_attributes = params[:cron_task] if RAILS::Version::MAJOR >= 5
-    @cron_task.safe_attributes = params[:cron_task].permit(:task, :interval, :comments, :enabled) if RAILS::Version::MAJOR == 4
+    @cron_task.safe_attributes = params[:cron_task] if Rails::VERSION::MAJOR >= 5
+    @cron_task.safe_attributes = params[:cron_task].permit(:task, :interval, :comments, :enabled) if Rails::VERSION::MAJOR == 4
 
   	if @cron_task.save
   		flash[:notice] = l(:notice_successful_update)

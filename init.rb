@@ -4,7 +4,7 @@ require 'redmine'
 Redmine::Plugin.register :redmine_cron do
   name 'Redmine job scheduler'
   description ''
-  version '1.0.0'
+  version '1.0.1'
   author_url 'https://github.com/marcelbonnet/'
   url 'https://github.com/marcelbonnet/redmine_cron'
   author 'Marcel Bonnet'

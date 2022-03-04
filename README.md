@@ -2,6 +2,9 @@
 
 One cron job to call Rake tasks managed by this plugin.
 
+[![Watch the video](tasks.png)](https://youtu.be/Xnb4m8K4NJ8)
+
+
 # Dependencies
 
 - RVM (Ruby Version Manager)

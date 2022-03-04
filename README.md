@@ -4,6 +4,7 @@ One cron job to call Rake tasks managed by this plugin.
 
 [![Watch the video](tasks.png)](https://youtu.be/Xnb4m8K4NJ8)
 
+* When creating a new Scheduled Task, the field _Interval_ must be set in _minutes_ .
 
 # Dependencies
 
